@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity 0.8.30;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
@@ -7,21 +7,21 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /*
  * @title DCOP
- * @author Santiago Marin
- * @notice DCOP is a decentralized stablecoin protocol designed to bring financial efficiency and stability to Colombia’s digital economy.
+ * @author Vankora.finance
+ * @notice DCOP is a decentralized stablecoin protocol designed to bring closer the Colombian Peso (COP) to the new digital economy.
  * Minting : Algorithmic
  * Collateral : Exogenous
  * Anchor : Colombian Peso (COP)
  *
  * This ERC20 token contract is meant to be governed by the DCOP Engine contract.
  */
-contract DCOP is ERC20Burnable, Ownable {
+contract DecentralizedCOP is ERC20Burnable, Ownable {
     // Custom errors.
     error MustBeMoreThanZero();
     error BurnAmountExceedsBalance();
     error NotZeroAddress();
 
-    constructor() ERC20("DCOP", "DCOP") Ownable(msg.sender) {}
+    constructor(address _owner) ERC20("DCOP", "DCOP") Ownable(_owner) {}
 
     function burn(uint256 amount) public override onlyOwner {
         uint256 balance = balanceOf(msg.sender);

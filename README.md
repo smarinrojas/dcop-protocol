@@ -1,4 +1,4 @@
-# dCOP Protocol
+# dCOP Decentralized Borrowing Protocol
 
 **dCOP** is a decentralized stablecoin protocol designed to bring **financial efficiency and stability to Colombia’s digital economy**.  
 The system enables the creation of a stable asset pegged to the **Colombian Peso (COP)**
